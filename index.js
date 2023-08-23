@@ -7,13 +7,14 @@ ee.on('tick',(a)=>{
     console.log(`Tick - ${a}`)
 })
 let a=1
-const startInt=setInterval(()=>{
-    
+const funcTimer=(sec)=>{
+    const startInt=setInterval(()=>{
     ee.emit("tick",a)
-    if (a==10){
+    if (a==sec){
         clearInterval(startInt)
     }
     a++
-},1000)
+},1000)}
 
+funcTimer(15)
 
